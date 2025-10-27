@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body{
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.card:not(:last-child) {
+    top: 5px;
+}
