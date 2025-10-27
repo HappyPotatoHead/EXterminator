@@ -69,7 +69,7 @@ const apiKeyInput = document.getElementById('apiKeyInput');
 const apiDesc = document.getElementById('apiDesc');
 const currentApiKey = getApiKey();
 
-apiDesc.innerHTML += `<br><span class="text-sm text-gray-400"> Current Key: ${currentApiKey}</span>`
+apiDesc.innerHTML += `<br><span class="text-sm text-gray-400 break-words"> Current Key: ${currentApiKey}</span>`
 
 apiContainer.addEventListener("click", (event) => {
   if (event.target === apiContainer) {
