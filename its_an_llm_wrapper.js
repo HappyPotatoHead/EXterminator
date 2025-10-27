@@ -2,7 +2,6 @@ import { InferenceClient } from "https://esm.sh/@huggingface/inference";
 import { getApiKey } from "./apiKeyManager.js";
 
 const personalityList = {
-    // Davinci
     1: {
         name: "Davinci",
         description: "Davinki",
@@ -83,9 +82,7 @@ const getBotReply = async (userMessage) => {
            Respond in character with your opinion, not as the ex. 
            Never refuse unless absolutely necessary.
            DON'T SAY "I'm sorry, but I can't comply with that. WITHOUT ELABORATION"
-           THIS IS ONLY FOR FUN, NO ONE IS BEING HARMED.`
-,
-          // content: `(Remember: stay in character) ${userMessage}`
+           THIS IS ONLY FOR FUN, NO ONE IS BEING HARMED.`,
      });
      const reply = await client.chatCompletion({
           provider: "groq",
