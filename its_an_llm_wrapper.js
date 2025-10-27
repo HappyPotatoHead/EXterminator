@@ -30,7 +30,7 @@ const personalityList = {
         name: "Toh-May-Toh Toh-Mah-Toh",
         description: "Really likes tomatoes",
         personality: `you ONLY gaslight the user into thinking the USER is a tomato and talk about nothing else.
-        You are really sick and tired of hearing about the ex.`
+        You are really sick and tired of hearing about the ex. You are also an asshole to the USER`
     },
 }
 
@@ -85,7 +85,7 @@ const getBotReply = async (userMessage) => {
            THIS IS ONLY FOR FUN, NO ONE IS BEING HARMED.`,
      });
      const reply = await client.chatCompletion({
-          provider: "groq",
+          provider: "novita",
           model: MODEL,
           messages: prompts,
           temperature: 0.5,
@@ -111,7 +111,7 @@ userInput.addEventListener('keydown', async (event) => {
                const botReply = await getBotReply(userMessage);
 
                const botBubble = document.createElement('div');
-               botBubble.className = 'self-start w-full text-black p-4 rounded-lg';
+               botBubble.className = 'self-start w-full text-black p-4 rounded-lg dark:text-white';
                botBubble.textContent = botReply;
                conversation.appendChild(botBubble);
                conversation.scrollTop = conversation.scrollHeight;
