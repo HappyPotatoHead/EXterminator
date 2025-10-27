@@ -62,11 +62,21 @@ if (localStorage.getItem('darkMode') === 'true' || (!('darkMode' in localStorage
     document.querySelector('html').classList.remove('dark');
 }
 
-let apiKey = null;
 const apiInput = document.getElementById("apiInput");
 const apiContainer = document.getElementById('giveMeYourAPIContainer');
-const apiToken = localStorage.getItem('userAPI');
+const apiCard = document.getElementById("giveMeYourAPI");
 const apiKeyInput = document.getElementById('apiKeyInput');
+const apiDesc = document.getElementById('apiDesc');
+const currentApiKey = getApiKey();
+
+apiDesc.innerHTML += `<br><span class="text-sm text-gray-400"> Current Key: ${currentApiKey}</span>`
+
+apiContainer.addEventListener("click", (event) => {
+  if (event.target === apiContainer) {
+    apiContainer.classList.add("hidden");
+  }
+});
+
 
 window.addEventListener("load", () => { 
     if (hasApiKey()){
@@ -88,8 +98,9 @@ apiInput.addEventListener('keydown', (event) => {
 });
 
 apiKeyInput.addEventListener("click", () => {
-    clearApiKey();
+    // clearApiKey();
     apiContainer.classList.toggle("hidden");
+    
     // else
     //     cardContainers.classList.remove('hidden'); 
     // }; 
