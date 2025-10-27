@@ -36,7 +36,6 @@ const personalityList = {
 }
 
 let client = null;
-// const client = new InferenceClient("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");
 
 const MODEL = "openai/gpt-oss-120b";
 const maxTurns = 10;
