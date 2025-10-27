@@ -120,18 +120,22 @@ const personalityList = {
     1: {
         name: "Davinci",
         description: "Davinki",
+        imageSource: "./assets/images/davinki.jpg",
     },
     2: {
         name:"Bob",
         description: "I think his name is Bob",
+        imageSource: "./assets/images/bob.jpg"
     },
     3: {
         name: "Charlie",
         description: "Unemployed",
+        imageSource: "./assets/images/charlie.jpg",
     },
     4: {
         name: "Toh-May-Toh Toh-Mah-Toh",
         description: "Really likes tomatoes",
+        imageSource: "./assets/images/tomato.jpg",
     },
 }
 
@@ -141,11 +145,18 @@ const createCards = () => {
         card.className = `
             card
             absolute w-full h-full rounded-[10px] flex flex-col
-            justify-center items-center text-4xl font-bold text-white 
+            justify-center  text-4xl font-bold text-white 
             shadow-lg select-none transition-transform duration-300 ease-in-out`;
         card.innerHTML = `
-            <h1 class = "absolute text-2xl ps-6 left-0 bottom-20">${personalityList[i].name}</h1>
-            <p class = "absolute left-0 bottom-10 text-lg ps-6">${personalityList[i].description}</p>
+            <div class="h-[200px] w-full pb-4 -mt-20">
+                <img class="w-full h-full object-contain rounded-lg" src="${personalityList[i].imageSource}" alt="${personalityList[i].name}" draggable="false">
+            </div>
+            <h1 class = "absolute text-2xl ps-6 left-0 bottom-20 text-black">${personalityList[i].name}</h1>
+            <p class = "absolute left-0 bottom-10 text-lg ps-6 text-black">${personalityList[i].description}</p>
+            <footer class="absolute bottom-2 left-0 w-full px-4 flex justify-between ml-auto">
+                <p class="text-xs text-slate-600">\<-Next</p>
+                <p class="text-xs text-slate-600">Choose -\></p> 
+            </footer>
         `;
         card.setAttribute("personality", i);
         card.style.backgroundColor = cardColors[i];
