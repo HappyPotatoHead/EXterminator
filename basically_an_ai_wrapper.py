@@ -3,7 +3,7 @@ from huggingface_hub import InferenceClient
 
 client = InferenceClient(
     provider="groq",
-    api_key="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" 
+    api_key="KEY"
 )
 
 MAX_TURNS = 10
